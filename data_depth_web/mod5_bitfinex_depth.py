@@ -9,8 +9,9 @@ logger = setup_logger("bitfinex_depth", os.path.join(project_root, 'log', 'app.l
 
 
 def bitfinex(symbol_name, reference):
+    current_symbol_name = symbol_name + reference
     for attempt in range(2):
-        url = f"https://api-pub.bitfinex.com/v2/book/t{symbol_name}/P0?len=100"
+        url = f"https://api-pub.bitfinex.com/v2/book/t{current_symbol_name}/P0?len=100"
         try:
             response = requests.get(url)
             if response.status_code == 200:
@@ -35,10 +36,9 @@ def bitfinex(symbol_name, reference):
                 }
                 return combined_data(data, reference, 'bitfinex')
             else:
-                logger.error(f"bitfinex Request failed with status code {response.status_code}")
+                logger.info(f"bitfinex change request params {current_symbol_name}")
                 if attempt == 0:
-                    logger.error(f"bitfinex change request params")
-                    symbol_name = symbol_name + ':' + reference
+                    current_symbol_name = symbol_name + ':' + reference
         except Exception as e:
-            logger.error(f"Failed to get depth from bitfinex Error: {repr(e)}")
+            logger.error(f"Failed to get depth from bitfinex using {current_symbol_name} Error: {repr(e)}")
 
