@@ -38,7 +38,7 @@ def fetch_combined_analysis_data(temp_table):
                     a.reference ask_reference,
                     b.price bid_reference_price,
                     a.price ask_reference_price,
-                    ROUND((((b.bid * b.price - a.ask * a.price) / (a.ask * a.price)) * 100), 4) price_diff_percentage
+                    ROUND((((b.bid * b.price - a.ask * a.price) / (a.ask * a.price)) * 100), 2) price_diff_percentage
                 FROM AdjustedPrices b, AdjustedPrices a
                 WHERE b.symbol_name = a.symbol_name
                 AND b.exchange_name <> a.exchange_name
