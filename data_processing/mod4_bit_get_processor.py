@@ -1,6 +1,7 @@
 import os
 
 from config.logger_config import setup_logger
+from data_stablecoin.stable_coin_processing import bit_get_stable_coin
 from database.db_pool import release_connection, get_connection
 from util.time_util import get_current_time
 from web_interaction.exclusion import get_filtered_symbols_for_exchange
@@ -22,6 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"bit_get - symbols       : {len(data)}")
     logger.info(f"bit_get - symbols found : {len(found_records)}")
+    bit_get_stable_coin(found_records)
     return found_records
 
 

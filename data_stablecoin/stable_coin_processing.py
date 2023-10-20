@@ -228,6 +228,26 @@ def bybit_stable_coin(data):
     release_connection(connection)
 
 
+def bit_get_stable_coin(data):
+    result = stable_coin_list('bitget')
+    pairs = [f"{currency[2]}-USDT" for currency in result]
+
+    connection = get_connection()
+    cursor = connection.cursor()
+    for pair in pairs:
+        for entry in data:
+            if entry[0] == pair:
+                last_value = entry[1]['close']
+                cursor.execute(
+                    "UPDATE stablecoin SET price = %s WHERE symbol_name = %s AND exchange_name = 'bitget'",
+                    (last_value, pair.split('-')[0]))
+                break
+
+    connection.commit()
+    cursor.close()
+    release_connection(connection)
+
+
 def coinex_stable_coin(data):
     result = stable_coin_list('coinex')
     pairs = [f"{currency[2]}-USDT" for currency in result]
