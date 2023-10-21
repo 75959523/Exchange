@@ -69,6 +69,7 @@ def validate_depth_data(args):
     exchange_bid = record[3]
     reference_ask = record[5]
     reference_bid = record[7]
+    percentage = record[1]
 
     reference_value_ask = [x[3] for x in reference if x[1] == exchange_ask and x[2] == reference_ask][0]
     reference_value_bid = [x[3] for x in reference if x[1] == exchange_bid and x[2] == reference_bid][0]
@@ -87,8 +88,8 @@ def validate_depth_data(args):
                 logger.info(f"{symbol}-{reference_bid} bid_data: {depth_data2}")
                 return None
 
-            asks_filtered = filter_asks(depth_data1['asks'], float(depth_data1['asks'][0][0]))
-            bids_filtered = filter_bids(depth_data2['bids'], float(depth_data2['bids'][0][0]))
+            asks_filtered = filter_asks(depth_data1['asks'], float(depth_data1['asks'][0][0]), float(percentage))
+            bids_filtered = filter_bids(depth_data2['bids'], float(depth_data2['bids'][0][0]), float(percentage))
 
             asks_total = calculate_total(asks_filtered, reference_value_ask, usd_to_cny)
             bids_total = calculate_total(bids_filtered, reference_value_bid, usd_to_cny)
