@@ -42,7 +42,7 @@ async def l_bank_symbols():
 
 
 async def l_bank_depth(found_records):
-    url = "https://api.lbkex.com/v2/depth.do?size=1&symbol="
+    url = "https://api.lbank.info/v2/depth.do?size=1&symbol="
     semaphore = asyncio.Semaphore(max_concurrent_requests)
     tasks = [fetch(symbol, url, semaphore) for symbol in found_records]
     results = await asyncio.gather(*tasks)

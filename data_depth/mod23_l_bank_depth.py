@@ -9,7 +9,7 @@ logger = setup_logger("l_bank_depth", os.path.join(project_root, 'log', 'app.log
 
 def l_bank(symbol_name, reference):
     symbol_name = str(symbol_name).lower() + '_' + str(reference).lower()
-    url = f"https://api.lbkex.com/v2/depth.do?size=100&symbol={symbol_name}"
+    url = f"https://api.lbank.info/v2/depth.do?size=100&symbol={symbol_name}"
 
     try:
         response = requests.get(url)
