@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"gate_io - symbols       : {len(data)}")
     logger.info(f"gate_io - symbols found : {len(found_records)}")
-    gate_io_stable_coin(found_records)
+    # gate_io_stable_coin(found_records)
     return found_records
 
 

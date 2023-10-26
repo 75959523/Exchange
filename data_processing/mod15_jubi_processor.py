@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"jubi - symbols       : {len(data)}")
     logger.info(f"jubi - symbols found : {len(found_records)}")
-    jubi_stable_coin()
+    # jubi_stable_coin()
     return found_records
 
 

@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"la_token - symbols       : {len(data)}")
     logger.info(f"la_token - symbols found : {len(found_records)}")
-    la_token_stable_coin(found_records)
+    # la_token_stable_coin(found_records)
     return found_records
 
 

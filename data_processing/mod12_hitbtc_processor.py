@@ -22,7 +22,7 @@ def filter_symbols(data):
 
     logger.info(f"hitbtc - symbols       : {len(data)}")
     logger.info(f"hitbtc - symbols found : {len(found_records)}")
-    hitbtc_stable_coin()
+    # hitbtc_stable_coin()
     return found_records
 
 

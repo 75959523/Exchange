@@ -22,7 +22,7 @@ def filter_symbols(data):
 
     logger.info(f"coin_w - symbols       : {len(data)}")
     logger.info(f"coin_w - symbols found : {len(found_records)}")
-    coin_w_stable_coin()
+    # coin_w_stable_coin()
     return found_records
 
 

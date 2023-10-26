@@ -21,7 +21,7 @@ def filter_symbols(data):
 
     logger.info(f"probit - symbols       : {len(data)}")
     logger.info(f"probit - symbols found : {len(found_records)}")
-    probit_stable_coin()
+    # probit_stable_coin()
     return found_records
 
 

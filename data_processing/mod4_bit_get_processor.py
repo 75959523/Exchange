@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"bit_get - symbols       : {len(data)}")
     logger.info(f"bit_get - symbols found : {len(found_records)}")
-    bit_get_stable_coin(found_records)
+    # bit_get_stable_coin(found_records)
     return found_records
 
 

@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"huobi - symbols       : {len(data)}")
     logger.info(f"huobi - symbols found : {len(found_records)}")
-    huobi_stable_coin(found_records)
+    # huobi_stable_coin(found_records)
     return found_records
 
 

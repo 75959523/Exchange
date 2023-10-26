@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"xt - symbols       : {len(data)}")
     logger.info(f"xt - symbols found : {len(found_records)}")
-    xt_stable_coin()
+    # xt_stable_coin()
     return found_records
 
 

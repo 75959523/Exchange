@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"digi_finex - symbols       : {len(data)}")
     logger.info(f"digi_finex - symbols found : {len(found_records)}")
-    digi_finex_stable_coin(found_records)
+    # digi_finex_stable_coin(found_records)
     return found_records
 
 

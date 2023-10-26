@@ -21,7 +21,7 @@ def filter_symbols(data):
 
     logger.info(f"ku_coin - symbols       : {len(data)}")
     logger.info(f"ku_coin - symbols found : {len(found_records)}")
-    ku_coin_stable_coin(found_records)
+    # ku_coin_stable_coin(found_records)
     return found_records
 
 

@@ -22,7 +22,7 @@ def filter_symbols(data):
 
     logger.info(f"poloniex - symbols       : {len(data)}")
     logger.info(f"poloniex - symbols found : {len(found_records)}")
-    poloniex_stable_coin(found_records)
+    # poloniex_stable_coin(found_records)
     return found_records
 
 

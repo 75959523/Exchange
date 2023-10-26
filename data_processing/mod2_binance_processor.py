@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"binance - symbols       : {len(data)}")
     logger.info(f"binance - symbols found : {len(found_records)}")
-    binance_stable_coin()
+    # binance_stable_coin()
     return found_records
 
 

@@ -29,7 +29,7 @@ def filter_symbols(data):
 
     logger.info(f"bitfinex - symbols       : {len(data)}")
     logger.info(f"bitfinex - symbols found : {len(found_records)}")
-    bitfinex_stable_coin(found_records)
+    # bitfinex_stable_coin(found_records)
     return found_records
 
 

@@ -22,7 +22,7 @@ def filter_symbols(data):
 
     logger.info(f"kraken - symbols       : {len(data)}")
     logger.info(f"kraken - symbols found : {len(found_records)}")
-    kraken_stable_coin(found_records)
+    # kraken_stable_coin(found_records)
     return found_records
 
 

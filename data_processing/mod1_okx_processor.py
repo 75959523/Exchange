@@ -21,7 +21,7 @@ def filter_symbols(data):
 
     logger.info(f"okx - symbols       : {len(data)}")
     logger.info(f"okx - symbols found : {len(found_records)}")
-    okx_stable_coin(found_records)
+    # okx_stable_coin(found_records)
     return found_records
 
 

@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"mexc - symbols       : {len(data)}")
     logger.info(f"mexc - symbols found : {len(found_records)}")
-    mexc_stable_coin()
+    # mexc_stable_coin()
     return found_records
 
 

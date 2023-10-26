@@ -23,7 +23,7 @@ def filter_symbols(data):
 
     logger.info(f"ascend_ex - symbols       : {len(data)}")
     logger.info(f"ascend_ex - symbols found : {len(found_records)}")
-    ascend_ex_stable_coin(found_records)
+    # ascend_ex_stable_coin(found_records)
     return found_records
 
 

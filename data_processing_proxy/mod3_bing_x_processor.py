@@ -21,7 +21,7 @@ def filter_symbols(data):
 
     logger.info(f"bing_x - symbols       : {len(data)}")
     logger.info(f"bing_x - symbols found : {len(found_records)}")
-    bing_x_stable_coin()
+    # bing_x_stable_coin()
     return found_records
 
 

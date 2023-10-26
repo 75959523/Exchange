@@ -21,7 +21,7 @@ def filter_symbols(data):
 
     logger.info(f"bigone - symbols       : {len(data)}")
     logger.info(f"bigone - symbols found : {len(found_records)}")
-    bigone_stable_coin(found_records)
+    # bigone_stable_coin(found_records)
     return found_records
 
 
