@@ -92,6 +92,9 @@ def fetch_combined_analysis_data(temp_table):
                     END chain_status,
                     CASE
                         WHEN
+                            TRIM(e.ask_ct_addr) = '' AND TRIM(e.bid_ct_addr) = '' 
+                        THEN 'Both Empty'
+                        WHEN
                             (e.ask_ct_addr ILIKE '%' || e.bid_ct_addr OR e.bid_ct_addr ILIKE '%' || e.ask_ct_addr)
                             AND
                             (UPPER(SUBSTRING(e.ask_ct_addr FROM LENGTH(e.ask_ct_addr) - 5)) = UPPER(SUBSTRING(e.bid_ct_addr FROM LENGTH(e.bid_ct_addr) - 5)))
@@ -107,6 +110,8 @@ def fetch_combined_analysis_data(temp_table):
                         ORDER BY
                             CASE
                                 WHEN
+                                    TRIM(e.ask_ct_addr) != '' AND TRIM(e.bid_ct_addr) != ''
+                                    AND
                                     (e.ask_ct_addr ILIKE '%' || e.bid_ct_addr OR e.bid_ct_addr ILIKE '%' || e.ask_ct_addr)
                                     AND
                                     (UPPER(SUBSTRING(e.ask_ct_addr FROM LENGTH(e.ask_ct_addr) - 5)) = UPPER(SUBSTRING(e.bid_ct_addr FROM LENGTH(e.bid_ct_addr) - 5)))
